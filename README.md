@@ -1,6 +1,6 @@
-# Advance Operating Systems CS 550 Programming Assignment 1
-# Name: Harsh Shah
 # Publisher-Subscriber System
+
+Name: Harsh Shah
 
 ## Overview.
 This Python project implements a Publisher-Subscriber model, which allows publishers to send messages to topics and subscribers to retrieve messages from them. The system is intended to promote communication among numerous clients (publishers and subscribers) via a server.
