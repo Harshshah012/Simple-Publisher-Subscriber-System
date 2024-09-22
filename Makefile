@@ -16,9 +16,16 @@ BENCHMARK_REGISTER_SUBSCRIBER = benchmarkregsub.py
 BENCHMARK_DELETE_TOPIC = benchmarkdeltopic.py
 BENCHMARK_SUBSCRIBE = benchmarksubsub.py
 PING_PONG_TEST = ping_pong_test.py
+GRAPH_PLOTTING = graph_plotting.py
 
 # Default rule
 all: main_program run_benchmarks
+
+#Installing the matplotlib library for creating graphs
+install:
+	@echo "Installing required Python packages..."
+	$(PYTHON) -m pip install matplotlib
+
 
 # Store server process ID to allow clean shutdown
 SERVER_PID_FILE = server.pid
@@ -37,6 +44,11 @@ stop_server:
 	else \
 		echo "No server running."; \
 	fi
+
+# Rule to Plot Graph
+plot_graph:  install
+			@echo "Plotting the graph..."
+			$(PYTHON) $(GRAPH_PLOTTING)
 
 # Rule to Main Menu Program
 main_program: start_server
@@ -77,5 +89,3 @@ clean:
 	$(MAKE) stop_server  # Stop the server if it's running
 	rm -f *.pyc
 	rm -rf __pycache__
-
-
