@@ -1,6 +1,6 @@
-#Name: Harsh Shah
+# Name: Harsh Shah
 
-#Project: Publisher-Subscriber System
+# Project: Publisher-Subscriber System
 
 # Overview
 This Python project implements a Publisher-Subscriber model, which allows publishers to send messages to topics and subscribers to retrieve messages from them. The system is intended to promote communication among numerous clients (publishers and subscribers) via a server.
